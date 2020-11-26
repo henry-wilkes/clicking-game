@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xml:lang="en">
+	<head>
+		<title>Click me play</title>
+		<link rel="stylesheet" type="text/css" href="./main.css" />
+		<meta name="description" content="A clicking game" />
+		<meta name="keywords" content="play,experiment,click" />
+		<meta name="author" content="henry" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	</head>
+	<body>
+    <!-- center the entire page -->
+    <div class="centerer">
+      <!-- page content -->
+      <div>
+        <h1>Clicking Game</h1>
+        <p>
+          <em>Note: This is a visual game that relies on using a mouse.</em>
+        </p>
+        <p>
+          Try clicking the button to turn it red. It's not impossible!
+        </p>
+
+        <div class="centerer">
+          <!-- Hide the mouse-area until script is run. If no javascript, don't
+            want to show these elements -->
+          <!-- Also, make the role presentation -->
+          <div id="mouse-area" style="display: none" role="presentation">
+            <div id="play-area" role="presentation">
+              <!-- We want the below to *look* like a button to visual users,
+                but we don't want it to be a actual button element because it
+                has no actual action beyond a presentational effect. Therefore,
+                we don't want it to be a focusable element or interpreted as a
+                button by the browser.
+                Similarly, we want to hide it from screen readers since the text
+                is decorative rather than descriptive -->
+              <span id="button" aria-hidden="true">
+                Click me
+              </span>
+            </div>
+          </div>
+
+          <!-- run this javascript which sets up the dimensions of the play area
+            before we load the rest -->
+          <script src="./main.js"></script>
+
+          <noscript>
+            <p class="info-message">
+              This game requires JavaScript to work, but it is not enabled.
+            </p>
+          </noscript>
+        </div> <!-- end centerer -->
+        
+        <p>
+          Some fun things to try:
+        </p>
+        <ul>
+          <li>
+            Hitting the button with the mouse at different speeds.
+          </li>
+          <li>
+            Let the button bounce off the mouse in different directions.
+          </li>
+          <li>
+            Scrolling the mouse into the button.
+          </li>
+          <li>
+            Zooming into the button.
+          </li>
+        </ul>
+      </div> <!-- end page content -->
+    </div> <!-- end centerer -->
+  </body>
+</html>

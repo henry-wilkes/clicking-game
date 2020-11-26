@@ -1,0 +1,106 @@
+/* Clicking Game Demo
+ * Copyright (C) 2020 Henry Wilkes
+
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+h1 {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+li {
+	margin-bottom: 0.5em;
+}
+
+li:last-child {
+	margin-bottom: 0;
+}
+
+.info-message {
+	text-align: center;
+	font-style: italic;
+	background-color: #ff6;
+	border: 4px solid #222;
+	padding: 1em;
+}
+
+.centerer {
+	display: block flex;
+	justify-content: safe center;
+}
+
+#mouse-area {
+	padding: 20px;
+}
+
+#play-area {
+	position: relative;
+	border: 8px solid black;
+	box-sizing: border-box;
+}
+
+#button {
+	position: absolute;
+
+	padding: 10px;
+	border: none;
+	border-radius: 8px;	
+
+	white-space: nowrap;
+	user-select: none;	
+	font-size: x-large;
+	font-weight: bold;
+	font-family: monospace;
+
+	--button-blue: #adf;
+	--button-red: #e68;
+	background-color: var(--button-blue);
+	background-image: none;
+}
+
+#button.shiny {
+	animation-name: shine;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.8, 0.2, 0.9, 0.6);
+	background-image: linear-gradient(
+		70deg, #fff0 43%, #fffc 48.5% 51.5%, #fff0 57%);
+	background-size: 250% 100%;
+}
+
+@keyframes shine {
+	from {
+		background-position: 100% 0;
+	}
+	to {
+		background-position: 0 0;
+	}
+}
+
+#button.alert {
+	background-color: var(--button-red);
+}
+
+#button.alert-fade {
+	animation-name: cooldown;
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+}
+
+@keyframes cooldown {
+	from {
+		background-color: var(--button-red);
+	}
+}
